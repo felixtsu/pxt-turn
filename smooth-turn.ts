@@ -8,19 +8,20 @@ namespace smoothturn{
     const EPSILON = 1.5
 
 
-    //%block
-    export function isCloseEnoughToTileCenter(sprite:Sprite) {
+    //%block="is $sprite close enough to tile center"
+    //%blockid=iscloseenoughtotilecenter 
+    export function isCloseEnoughToTileCenter(sprite:Sprite):boolean {
         let loc = tiles.locationOfSprite(sprite)    
         return distanceOf(sprite, loc) <= EPSILON;
     }
 
-    //%block
-    export function isWall(sprite:Sprite, direction:CollisionDirection) {
+    //%block="is location in $direction of $sprite wall tile"
+    export function isWall(sprite:Sprite, direction:CollisionDirection):boolean {
         let loc = tiles.locationOfSprite(sprite)
         return tiles.tileIsWall(tiles.locationInDirection(loc, direction))
     }
 
-    //%block
+    //%block="align $sprite to tile center"
     export function alignToTileCenter(sprite:Sprite) {
         let loc = tiles.locationOfSprite(sprite)    
         sprite.x = loc.x
