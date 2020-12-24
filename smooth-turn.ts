@@ -1,4 +1,5 @@
-// Add your code here
+//% block="Smooth turn"
+//% color=#6699CC icon="\u21BB"
 namespace smoothturn{
 
     function distanceOf(sprite:Sprite, location:tiles.Location) {
