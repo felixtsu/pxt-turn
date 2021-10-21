@@ -11,7 +11,7 @@ namespace smoothturn{
 
     //%block="is $sprite close enough to tile center"
     //%blockid=iscloseenoughtotilecenter 
-    export function isCloseEnoughToTileCenter(sprite:Sprite, epsilon?:number):boolean {
+    export function isCloseEnoughToTileCenter(sprite:Sprite, epsilon:number=1.5):boolean {
         if(epsilon == NaN) {
             epsilon = EPSILON
         }
