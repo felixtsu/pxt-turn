@@ -28,8 +28,10 @@ namespace smoothturn{
     //%block="align $sprite to tile center"
     export function alignToTileCenter(sprite:Sprite) {
         let loc = tiles.locationOfSprite(sprite)    
+        sprite.setFlag(SpriteFlag.GhostThroughTiles, true)
         sprite.x = loc.x
         sprite.y = loc.y
+        sprite.setFlag(SpriteFlag.GhostThroughTiles, false)
     }
     
     let _movingSprite:Sprite = null
