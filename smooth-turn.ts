@@ -1,4 +1,5 @@
 //% block="Smooth turn"
+//% advanced=true
 //% color=#6699CC icon="\u21BB"
 namespace smoothturn{
 
@@ -9,7 +10,7 @@ namespace smoothturn{
     const EPSILON = 1.5
 
 
-    //%block="is $sprite close enough to tile center"
+    //%block="is %sprite=variables_get(mySprite) close enough to tile center"
     //%blockid=iscloseenoughtotilecenter 
     export function isCloseEnoughToTileCenter(sprite:Sprite, epsilon:number=1.5):boolean {
         if(epsilon == NaN) {
@@ -19,13 +20,13 @@ namespace smoothturn{
         return distanceOf(sprite, loc) <= epsilon;
     }
 
-    //%block="is location in $direction of $sprite wall tile"
+    //%block="is location in $direction of %sprite=variables_get(mySprite)  wall tile"
     export function isWall(sprite:Sprite, direction:CollisionDirection):boolean {
         let loc = tiles.locationOfSprite(sprite)
         return tiles.tileIsWall(tiles.locationInDirection(loc, direction))
     }
 
-    //%block="align $sprite to tile center"
+    //%block="align %sprite=variables_get(mySprite)  to tile center"
     export function alignToTileCenter(sprite:Sprite) {
         let loc = tiles.locationOfSprite(sprite)    
         sprite.setFlag(SpriteFlag.GhostThroughTiles, true)
